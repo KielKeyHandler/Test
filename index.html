@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quantum Hub</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Cinzel:wght@400;600;700&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<div id="pg-wipe"></div>
+<div id="cur"></div>
+<div id="cur-ring"></div>
+<div class="amb amb-l"></div>
+<div class="amb amb-r"></div>
+<canvas id="bg"></canvas>
+<div class="drw-over" id="dov"></div>
+
+<!-- DRAWER -->
+<div class="drw" id="drw">
+  <span class="drw-logo">QUANTUM HUB</span>
+  <a href="#" class="dl" id="nav-key">
+    <div class="dl-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg></div>
+    <div><div class="dl-label">Key</div><div class="dl-sub">Get your access key</div></div>
+  </a>
+  <a href="#" class="dl" id="nav-shop">
+    <div class="dl-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></div>
+    <div><div class="dl-label">Shop</div><div class="dl-sub">Browse our store</div></div>
+  </a>
+  <a href="https://discord.gg/YOUR_INVITE" target="_blank" rel="noopener" class="dl" id="nav-discord">
+    <div class="dl-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057.1 18.18.118 18.302.16 18.418a19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/></svg></div>
+    <div><div class="dl-label">Discord</div><div class="dl-sub">Join our community ↗</div></div>
+  </a>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a class="logo" href="#" id="nav-home">QUANTUM <span>HUB</span></a>
+  <button class="hbg" id="hbg" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- ══ PAGE: HOME ══ -->
+<div class="page active" id="page-home">
+  <section class="hero page-blur-target">
+    <div class="badge"><span class="bdot"></span>Established 2022 &nbsp;&#8212;&nbsp; Trusted Since Day One</div>
+    <h1 class="hero-title">QUANTUM HUB</h1>
+    <p class="hero-sub">Premium Script Hub</p>
+    <p class="hero-italic">Precision-engineered scripts, built for those who demand the extraordinary</p>
+    <div class="hdiv"></div>
+
+    <!-- CREDITS -->
+    <div class="credits-wrap">
+
+      <div class="credit-card" onclick="openDev('owner')">
+        <div class="credit-avatar">
+          <!-- Crown — Owner -->
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--pl)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 20h20M4 20L2 8l5 4 5-8 5 8 5-4-2 12"/>
+            <circle cx="12" cy="4" r="1" fill="var(--pl)" stroke="none"/>
+            <circle cx="2" cy="8" r="1" fill="var(--pl)" stroke="none"/>
+            <circle cx="22" cy="8" r="1" fill="var(--pl)" stroke="none"/>
+          </svg>
+        </div>
+        <div class="credit-info">
+          <div class="credit-role">Owner</div>
+          <div class="credit-name">Trustenotcondom</div>
+        </div>
+        <svg class="credit-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 18l6-6-6-6"/></svg>
+      </div>
+
+      <div class="credit-card" onclick="openDev('dev')">
+        <div class="credit-avatar">
+          <!-- Lua code braces — Script Developer -->
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--pl)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M8 3H7a2 2 0 0 0-2 2v5a2 2 0 0 1-2 2 2 2 0 0 1 2 2v5a2 2 0 0 0 2 2h1"/>
+            <path d="M16 3h1a2 2 0 0 1 2 2v5a2 2 0 0 0 2 2 2 2 0 0 0-2 2v5a2 2 0 0 1-2 2h-1"/>
+          </svg>
+        </div>
+        <div class="credit-info">
+          <div class="credit-role">Main Script Developer</div>
+          <div class="credit-name">Flazhygg</div>
+        </div>
+        <svg class="credit-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 18l6-6-6-6"/></svg>
+      </div>
+
+      <div class="credit-card" onclick="openDev('webdev')">
+        <div class="credit-avatar">
+          <!-- Monitor/browser — Website Developer -->
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--pl)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="3" width="20" height="14" rx="2"/>
+            <path d="M8 21h8M12 17v4"/>
+            <path d="M6 7h.01M9 7h6"/>
+          </svg>
+        </div>
+        <div class="credit-info">
+          <div class="credit-role">Website Developer</div>
+          <div class="credit-name">Trustkiel</div>
+        </div>
+        <svg class="credit-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 18l6-6-6-6"/></svg>
+      </div>
+
+      <div class="credit-card" onclick="openDev('tester')">
+        <div class="credit-avatar">
+          <!-- Checkmark shield — Tester -->
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--pl)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <polyline points="9 12 11 14 15 10"/>
+          </svg>
+        </div>
+        <div class="credit-info">
+          <div class="credit-role">Web / Main Tester</div>
+          <div class="credit-name">cudal03ytph</div>
+        </div>
+        <svg class="credit-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 18l6-6-6-6"/></svg>
+      </div>
+
+    </div>
+
+    <div class="hcta">
+      <a href="https://discord.gg/YOUR_INVITE" target="_blank" rel="noopener" class="btn btn-o">Join Discord ↗</a>
+    </div>
+
+    <div class="scroll-hint"><span>Scroll</span><div class="scroll-line"></div></div>
+  </section>
+
+  <!-- DEV MODAL -->
+  <div id="dev-modal" onclick="handleModalClick(event)">
+    <div id="dev-modal-bg"></div>
+    <div class="dev-modal-box">
+      <div class="dev-modal-corn dmc-tl"></div>
+      <div class="dev-modal-corn dmc-tr"></div>
+      <div class="dev-modal-corn dmc-bl"></div>
+      <div class="dev-modal-corn dmc-br"></div>
+      <button class="dev-modal-close" onclick="closeDev()">✕</button>
+      <div class="dev-modal-avatar" id="dm-avatar"></div>
+      <div class="dev-modal-role" id="dm-role">Owner</div>
+      <div class="dev-modal-name" id="dm-name">Trustenotcondom</div>
+      <div class="dev-modal-divider"></div>
+      <p class="dev-modal-desc" id="dm-desc"></p>
+    </div>
+  </div>
+
+  <div class="stats">
+    <div class="stat"><span class="snum" data-t="4" data-s="+">4+</span><span class="slbl">Years Since Established</span></div>
+    <div class="stat"><span class="snum" data-t="1" data-s="">1</span><span class="slbl">Elite Script</span></div>
+    <div class="stat"><span class="snum" data-t="95" data-s="%">95%</span><span class="slbl">Client Satisfaction</span></div>
+    <div class="stat"><span class="snum" data-t="2022" data-s="">2022</span><span class="slbl">Active Since</span></div>
+  </div>
+
+  <section class="sec" id="features">
+    <p class="sec-lbl">&#10022; What We Offer</p>
+    <h2 class="sec-ttl">Crafted for<br><span>Peak Performance</span></h2>
+    <div class="cards">
+      <div class="card">
+        <div class="c-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg><span class="c-num">01</span></div>
+        <h3>Optimized Performance</h3>
+        <p>Our script is engineered at the quantum level. Every millisecond is accounted for — smooth, fast, and relentlessly reliable no matter the environment.</p>
+      </div>
+      <div class="card">
+        <div class="c-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><span class="c-num">02</span></div>
+        <h3>Secure &amp; Private</h3>
+        <p>Built with a key-based authentication system. Only verified users gain access — protecting both your identity and the integrity of the script.</p>
+      </div>
+      <div class="card">
+        <div class="c-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg><span class="c-num">03</span></div>
+        <h3>Community Driven</h3>
+        <p>A thriving Discord community behind every update. User feedback shapes every release — because we build this for you, not just ourselves.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="quote-sec">
+    <div class="orn"><div class="orn-l"></div><div class="orn-d"></div><div class="orn-r"></div></div>
+    <span class="q-mark">"</span>
+    <p class="q-txt">Since <em>2022</em>, we have not chased trends — we have set the standard, one flawless execution at a time.</p>
+    <p class="q-auth">— The <span>Quantum Hub</span> Standard</p>
+    <div class="orn" style="margin-top:52px"><div class="orn-l"></div><div class="orn-d"></div><div class="orn-r"></div></div>
+  </section>
+
+  <section class="cta-sec">
+    <div class="p-card">
+      <div class="corn c-tl"></div><div class="corn c-tr"></div><div class="corn c-bl"></div><div class="corn c-br"></div>
+      <h2>Ready to Join?</h2>
+      <p>Get your key, browse the shop, or connect with our community. Quantum Hub has been trusted since 2022 — experience it for yourself.</p>
+      <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+        <a href="#" class="btn btn-p show-key">Get Key</a>
+        <a href="#" class="btn btn-o show-shop">Open Shop</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <a class="logo" href="#" id="footer-home">QUANTUM HUB</a>
+    <p>&#169; 2022&#8211;2025 Quantum Hub. All rights reserved.</p>
+    <p>Est. 2022</p>
+  </footer>
+</div>
+
+<!-- ══ PAGE: KEY ══ -->
+<div class="page" id="page-key">
+  <div class="key-wrap">
+    <button class="btn-back show-home">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+      Back to Home
+    </button>
+    <p class="page-eyebrow">&#10022; Access System</p>
+    <h1 class="page-title">Get Your Key</h1>
+    <p class="page-desc">Complete the steps below to receive your Quantum Hub access key. Choose your preferred checkpoint provider.</p>
+
+    <div class="key-steps">
+      <div class="key-step">
+        <span class="step-num">01</span>
+        <div class="step-info">
+          <h4>Complete a Checkpoint</h4>
+          <p>Click one of the links below. Complete the short checkpoint on the provider's site to verify you're human.</p>
+        </div>
+      </div>
+      <div class="key-step">
+        <span class="step-num">02</span>
+        <div class="step-info">
+          <h4>Copy Your Key</h4>
+          <p>After completing the checkpoint, your key will be displayed. Copy it carefully — it expires periodically.</p>
+        </div>
+      </div>
+      <div class="key-step">
+        <span class="step-num">03</span>
+        <div class="step-info">
+          <h4>Paste &amp; Execute</h4>
+          <p>Open Quantum Hub in your executor, paste your key when prompted, and you're in. Enjoy the script.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="key-providers">
+
+      <!-- Linkvertise — green brand, embedded logo -->
+      <a href="https://linkvertise.com/YOUR_ID" target="_blank" rel="noopener" class="provider-card provider-lv">
+        <div class="provider-logo" style="background:linear-gradient(135deg,#1a0a00,#2e1200)">
+          <!-- Linkvertise: orange "L" with link chain — matches their actual orange logo -->
+          <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="42" height="42" rx="11" fill="#FF6B00" fill-opacity="0.15"/>
+            <!-- The "L" lettermark -->
+            <path d="M13 10 L13 28 L22 28" stroke="#FF6B00" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <!-- Small chain link dot accent -->
+            <circle cx="27" cy="16" r="3.5" stroke="#FF6B00" stroke-width="2" fill="none"/>
+            <circle cx="27" cy="25" r="3.5" stroke="#FF6B00" stroke-width="2" fill="none"/>
+            <line x1="27" y1="19.5" x2="27" y2="21.5" stroke="#FF6B00" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="provider-info">
+          <div class="provider-name">Linkvertise</div>
+          <div class="provider-desc">Complete a short checkpoint · Opens new tab</div>
+        </div>
+        <span class="provider-arrow">→</span>
+      </a>
+
+      <!-- Lootlabs — orange brand, embedded logo -->
+      <a href="https://loot-labs.com/YOUR_ID" target="_blank" rel="noopener" class="provider-card provider-ll">
+        <div class="provider-logo" style="background:linear-gradient(135deg,#0e0520,#1a0a35)">
+          <!-- Lootlabs: purple loot chest — matches their actual purple logo -->
+          <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="42" height="42" rx="11" fill="#A855F7" fill-opacity="0.15"/>
+            <!-- Chest body -->
+            <rect x="9" y="20" width="24" height="14" rx="2" stroke="#A855F7" stroke-width="2" fill="#A855F7" fill-opacity="0.1"/>
+            <!-- Chest lid -->
+            <path d="M9 22 L9 16 Q9 12 21 12 Q33 12 33 16 L33 22" stroke="#A855F7" stroke-width="2" fill="#A855F7" fill-opacity="0.15"/>
+            <!-- Center latch -->
+            <rect x="18" y="20" width="6" height="5" rx="1.5" stroke="#A855F7" stroke-width="1.8" fill="none"/>
+            <!-- Sparkle on lid -->
+            <circle cx="21" cy="17" r="1.5" fill="#A855F7" fill-opacity="0.9"/>
+          </svg>
+        </div>
+        <div class="provider-info">
+          <div class="provider-name">Lootlabs</div>
+          <div class="provider-desc">Complete a short checkpoint · Opens new tab</div>
+        </div>
+        <span class="provider-arrow">→</span>
+      </a>
+
+    </div>
+    <p class="key-note">Keys are free. Checkpoints support the development of Quantum Hub.<br>Having issues? Join our <a href="https://discord.gg/YOUR_INVITE" target="_blank" style="color:var(--pl);text-decoration:none">Discord ↗</a> for support.</p>
+  </div>
+</div>
+
+<!-- ══ PAGE: SHOP ══ -->
+<div class="page" id="page-shop">
+  <div class="shop-wrap">
+    <button class="btn-back show-home">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+      Back to Home
+    </button>
+
+    <!-- ════════════════════════════════════════════
+         SHOP PAGE HEADER — edit title & subtitle
+         ════════════════════════════════════════════ -->
+    <div class="shop-header">
+      <p class="page-eyebrow">&#10022; Store</p>
+      <h1 class="page-title">Quantum Shop</h1> <!-- ← SHOP PAGE TITLE -->
+      <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.1rem;color:var(--dim);line-height:1.7;max-width:460px;margin:0 auto">
+        Upgrade your experience. Premium plans unlock exclusive features and priority support. <!-- ← SHOP SUBTITLE -->
+      </p>
+    </div>
+
+    <div class="shop-grid">
+
+      <!-- CURRENCY SELECTOR -->
+      <div style="grid-column:1/-1">
+        <div class="currency-bar">
+          <span class="currency-label">&#10022; Show prices in</span>
+          <div class="cur-drop" id="shop-drop">
+            <div class="cur-trigger" id="shop-trigger" onclick="toggleDrop('shop')">
+              <span class="cur-flag" id="shop-flag">🇺🇸</span>
+              <span class="cur-text" id="shop-cur-text">USD — US Dollar</span>
+              <svg class="cur-arrow" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4"/></svg>
+            </div>
+            <div class="cur-panel" id="shop-panel">
+              <div class="cur-search-wrap"><input class="cur-search" placeholder="Search currency..." oninput="filterCur(this,'shop-panel')" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></div>
+              <div id="shop-list"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ════════════════════════════════════════
+           CARD 1 — FREE TIER
+           To remove this card: delete this entire block
+           ════════════════════════════════════════ -->
+      <div class="shop-card">
+        <p class="shop-tier">&#10022; Starter</p>              <!-- ← TIER LABEL (top small text) -->
+        <h2 class="shop-name">Free</h2>                        <!-- ← PLAN NAME -->
+        <div class="shop-price">$0<span>/mo</span></div>       <!-- ← PRICE  |  change $0 and /mo -->
+        <p class="shop-converted" id="conv-free">Always free</p>
+        <p class="shop-period">Forever free</p>                <!-- ← BILLING PERIOD text -->
+        <div class="shop-divider"></div>
+        <ul class="shop-features">
+          <!-- ← ADD or REMOVE <li> lines to change features -->
+          <li>Full script access via key</li>
+          <li>Community Discord support</li>
+          <li>Regular updates</li>
+          <li>Basic features included</li>
+        </ul>
+        <!-- ← BUTTON: opens key page on this site (no checkout needed for free) -->
+        <a href="#" class="btn-shop btn-shop-o show-key">Get Free Key</a>
+      </div>
+
+      <!-- ════════════════════════════════════════
+           CARD 2 — PRO TIER  (FEATURED / POPULAR badge)
+           To remove "POPULAR" badge: remove class "featured" from the div below
+           To make a different card featured: move class "featured" to that card
+           ════════════════════════════════════════ -->
+      <div class="shop-card featured">
+        <p class="shop-tier">&#10022; Premium</p>              <!-- ← TIER LABEL -->
+        <h2 class="shop-name">Monthly</h2>                         <!-- ← PLAN NAME -->
+        <div class="shop-price">$2<span>.99/mo</span></div>    <!-- ← PRICE  |  change $4 and .99/mo -->
+        <p class="shop-converted" id="conv-monthly">≈ loading...</p>
+        <p class="shop-period">Billed monthly</p>              <!-- ← BILLING PERIOD text -->
+        <div class="shop-divider"></div>
+        <ul class="shop-features">
+          <!-- ← ADD or REMOVE <li> lines to change features -->
+          <li>No key system — instant access</li>
+          <li>Priority Discord support</li>
+          <li>Early access to new features</li>
+          <li>Exclusive Pro-only scripts</li>
+          <li>Ad-free checkpoint bypass</li>
+        </ul>
+        <!-- ← BUTTON: opens checkout page for Monthly plan -->
+        <a href="#" class="btn-shop btn-shop-p show-checkout" data-plan="Monthly" data-price="$2.99" data-period="per month">Buy Monthly</a>
+      </div>
+
+      <!-- ════════════════════════════════════════
+           CARD 3 — LIFETIME TIER
+           To add a 4th card: copy this entire block and paste after this one
+           ════════════════════════════════════════ -->
+      <div class="shop-card">
+        <p class="shop-tier">&#10022; Elite</p>                <!-- ← TIER LABEL -->
+        <h2 class="shop-name">Lifetime</h2>                    <!-- ← PLAN NAME -->
+        <div class="shop-price">$8<span>.99</span></div>      <!-- ← PRICE  |  change $19 and .99 -->
+        <p class="shop-converted" id="conv-lifetime">≈ loading...</p>
+        <p class="shop-period">One-time payment</p>            <!-- ← BILLING PERIOD text -->
+        <div class="shop-divider"></div>
+        <ul class="shop-features">
+          <!-- ← ADD or REMOVE <li> lines to change features -->
+          <li>Everything in Pro, forever</li>
+          <li>VIP Discord role</li>
+          <li>Private beta testing access</li>
+          <li>Direct developer support</li>
+          <li>Never pay again</li>
+        </ul>
+        <!-- ← BUTTON: opens checkout page for Lifetime plan -->
+        <a href="#" class="btn-shop btn-shop-p show-checkout" data-plan="Lifetime" data-price="$8.99" data-period="one-time">Buy Lifetime</a>
+      </div>
+
+    </div><!-- end shop-grid -->
+
+    <!-- ════════════════════════════════════════
+         SHOP FOOTER NOTE — edit the text and links below
+         ════════════════════════════════════════ -->
+    <p class="shop-note">
+      Purchases are handled via our Discord server. DM an admin after joining.<br> <!-- ← EDIT THIS TEXT -->
+      <a href="https://discord.gg/YOUR_INVITE" target="_blank" rel="noopener">Join Discord ↗</a> <!-- ← DISCORD LINK -->
+      &nbsp;·&nbsp; All sales final. No refunds on digital goods. <!-- ← EDIT POLICY TEXT -->
+    </p>
+
+  </div>
+</div>
+
+<!-- ══ PAGE: CHECKOUT ══ -->
+<div class="page" id="page-checkout">
+  <div class="checkout-wrap">
+    <button class="btn-back show-shop">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+      Back to Shop
+    </button>
+
+    <div id="checkout-plan-badge" class="checkout-plan-badge"><span class="bdot"></span><span id="co-plan-name">Monthly</span></div>
+    <h1 class="checkout-title">Complete Your Order</h1>
+    <div class="checkout-price-row">
+      <span class="checkout-price-big" id="co-price">$2.99</span>
+      <span class="checkout-price-sub" id="co-period">per month</span>
+    </div>
+    <p class="checkout-converted" id="co-converted"></p>
+    <p class="checkout-period" id="co-period-note">Cancel anytime · Instant access after payment</p>
+    <div class="currency-bar" style="margin-top:12px;margin-bottom:0">
+      <span class="currency-label">Currency</span>
+      <div class="cur-drop" id="checkout-drop">
+        <div class="cur-trigger" id="checkout-trigger" onclick="toggleDrop('checkout')">
+          <span class="cur-flag" id="checkout-flag">🇺🇸</span>
+          <span class="cur-text" id="checkout-cur-text">USD — US Dollar</span>
+          <svg class="cur-arrow" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4"/></svg>
+        </div>
+        <div class="cur-panel" id="checkout-panel">
+          <div class="cur-search-wrap"><input class="cur-search" placeholder="Search currency..." oninput="filterCur(this,'checkout-panel')" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></div>
+          <div id="checkout-list"></div>
+        </div>
+      </div>
+    </div>
+
+    <ul class="checkout-features" id="co-features"></ul>
+
+    <div class="checkout-divider"></div>
+
+    <div class="checkout-box" style="position:relative">
+      <div class="checkout-corn co-tl"></div>
+      <div class="checkout-corn co-tr"></div>
+      <div class="checkout-corn co-bl"></div>
+      <div class="checkout-corn co-br"></div>
+
+      <p class="checkout-label">&#10022; Payment Method</p>
+
+      <!-- PAYMENT METHOD TABS -->
+      <div class="pay-methods">
+        <button class="pay-tab active" data-method="card" onclick="switchPay('card')">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+          <span>Card</span>
+        </button>
+        <button class="pay-tab" data-method="paypal" onclick="switchPay('paypal')">
+          <!-- PayPal P icon -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 20h2.5M9 20l1-6h3.5c2.5 0 4.5-1.5 5-4 .4-2-1-4-3.5-4H8L6 16"/><path d="M10 10c.5-2 2-3 4-3h2c1.5 0 2.5 1 2.5 2.5C18 12 16.5 13 15 13h-3"/></svg>
+          <span>PayPal</span>
+        </button>
+        <button class="pay-tab" data-method="gcash" onclick="switchPay('gcash')">
+          <!-- GCash G icon -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M16 12h-4v2h4"/><path d="M16 10a5 5 0 1 0 0 4"/></svg>
+          <span>GCash</span>
+        </button>
+      </div>
+
+      <div class="pay-panels-wrap">
+      <!-- CARD PANEL -->
+      <div class="pay-panel active visible" id="panel-card">
+        <!-- WORK IN PROGRESS BANNER -->
+        <div style="border:1px solid rgba(176,110,232,.2);border-radius:10px;background:rgba(176,110,232,.05);padding:20px;text-align:center;margin-bottom:4px">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="rgba(176,110,232,.6)" stroke-width="1.4" stroke-linecap="round" style="margin-bottom:10px"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          <p style="font-family:'Cinzel',serif;font-size:.85rem;color:var(--pl);letter-spacing:.12em;margin-bottom:6px">Work in Progress</p>
+          <p style="font-size:.62rem;color:var(--dim);line-height:1.75;letter-spacing:.06em">Card payment integration is currently being set up. Please use <strong style="color:var(--pl)">GCash</strong> or <strong style="color:var(--pl)">PayPal</strong> in the meantime.</p>
+        </div>
+      </div>
+
+      <!-- PAYPAL PANEL -->
+      <div class="pay-panel" id="panel-paypal">
+        <div style="text-align:center;padding:28px 0 22px">
+          <p style="font-family:'Cinzel',serif;font-size:.9rem;color:var(--pl);letter-spacing:.08em;margin-bottom:8px">PayPal</p>
+          <p style="font-size:.68rem;color:var(--dim);line-height:1.8;margin-bottom:22px">You will be redirected to PayPal to complete your payment securely.</p>
+          <!-- ← REPLACE href with your PayPal.me or PayPal payment link -->
+          <input class="checkout-field" type="email" placeholder="Your PayPal email (optional)">
+        </div>
+      </div>
+
+      <!-- GCASH PANEL -->
+      <div class="pay-panel" id="panel-gcash">
+        <p style="font-family:'Cinzel',serif;font-size:.9rem;color:var(--pl);letter-spacing:.08em;margin-bottom:10px">GCash</p>
+        <p style="font-size:.66rem;color:rgba(176,110,232,.75);line-height:1.75;margin-bottom:18px;border:1px solid rgba(176,110,232,.18);border-radius:8px;padding:10px 14px;background:rgba(176,110,232,.05)">
+          ⚠ Make sure you are already a member of our Discord server before sending payment.
+        </p>
+        <p style="font-size:.65rem;color:var(--dim);line-height:1.8;margin-bottom:16px">Send the exact amount to the GCash number below, then fill in the details and attach your receipt screenshot.</p>
+        <!-- ← REPLACE with your actual GCash number -->
+        <div id="gcash-number" onclick="copyGcash()" style="border:1px solid rgba(176,110,232,.25);border-radius:8px;padding:13px 18px;margin-bottom:16px;font-family:'Cinzel',serif;font-size:1.05rem;color:var(--pl);letter-spacing:.12em;text-align:center;cursor:pointer;transition:border-color .25s,filter .25s,background .25s;user-select:none;-webkit-user-select:none;position:relative" title="Click to copy">
+          <span id="gcash-num-text">09XX — XXX — XXXX</span>
+          <span id="gcash-copy-hint" style="display:block;font-family:'Montserrat',sans-serif;font-size:.42rem;letter-spacing:.22em;color:rgba(176,110,232,.45);margin-top:4px;text-transform:uppercase">Tap to copy</span>
+        </div>
+        <input class="checkout-field" style="border-radius:8px" id="gcash-ref" type="text" placeholder="Reference Number (from GCash receipt)">
+        <input class="checkout-field" style="border-radius:8px" id="gcash-discord" type="text" placeholder="Discord Username (e.g. username#0000)">
+        <!-- File drop zone -->
+        <div id="gcash-drop" style="border:1.5px dashed rgba(176,110,232,.3);border-radius:10px;padding:22px 16px;text-align:center;cursor:pointer;transition:border-color .25s,background .25s;margin-top:4px;position:relative" onclick="document.getElementById('gcash-file').click()" ondragover="gcashDragOver(event)" ondragleave="gcashDragLeave(event)" ondrop="gcashDrop(event)">
+          <input type="file" id="gcash-file" accept="image/*,.pdf" style="display:none" onchange="gcashFileChosen(this)">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(176,110,232,.5)" stroke-width="1.5" stroke-linecap="round" style="margin-bottom:8px"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+          <p id="gcash-drop-label" style="font-size:.62rem;letter-spacing:.15em;color:rgba(176,110,232,.5);text-transform:uppercase">Drop receipt here or tap to upload</p>
+        </div>
+      </div>
+      </div><!-- /pay-panels-wrap -->
+
+      <div id="checkout-msg" style="display:none;border-radius:8px;padding:10px 14px;margin-top:14px;font-size:.64rem;letter-spacing:.1em;line-height:1.7;text-align:center"></div>
+
+      <button class="checkout-submit" id="confirm-btn" onclick="handleCheckout()">
+        Confirm Order
+      </button>
+
+      <div class="checkout-secure">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Secured · 256-bit SSL Encrypted
+      </div>
+    </div>
+
+    <p class="checkout-note">
+      After payment, access is granted via Discord.<br>
+      Join our <a href="https://discord.gg/YOUR_INVITE" target="_blank">Discord ↗</a> if you need help.
+    </p>
+  </div>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>
